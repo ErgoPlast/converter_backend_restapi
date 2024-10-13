@@ -1,0 +1,7 @@
+services:
+  backend:
+    image: backend_api:v1.0
+    ports:
+      - 3000:3000
+    environment:
+      - API_KEY=661fea2909c16ff5f8eec469

@@ -1,0 +1,40 @@
+# swagger.yml
+openapi: 3.0.0
+info:
+  title: "Flask REST API"
+  description: "An API about currency converter"
+  version: "1.0.0"
+servers:
+  - url: "/api"
+paths:
+  /rates:
+    get:
+      operationId: "main.get_rate"
+      parameters:
+        - name: rateFrom
+          in: query
+          description: currency to be exchanged (check supported currencies https://www.exchangerate-api.com/docs/supported-currencies)
+          required: true
+          schema:
+            type: string
+        - name: rateTo
+          in: query
+          description: currency to exchange for (check supported currencies https://www.exchangerate-api.com/docs/supported-currencies)
+          required: true
+          schema:
+            type: string
+        - name: value
+          in: query
+          description: the value that needs to be exchanged 
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - "rates"
+      summary: "get rates of currency value"
+      responses:
+        "200":
+          description: "Successfully get rate of currency value"
+        "500":
+          description: "Wrong request"
