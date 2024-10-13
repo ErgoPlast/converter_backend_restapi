@@ -1,1 +1,1 @@
- docker build -t backend_api:v1.0 .\converter_backend_restapi\
+ docker build -t backend_api:v1.0 ..\converter_backend_restapi\
